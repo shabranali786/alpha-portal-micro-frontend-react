@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "dev": "vite --port 5001 --strictPort",
+    "build": "vite build",
+    "build:watch": "vite build --watch",
+    "preview": "vite preview --port 5001 --strictPort",
+    "dev:remote": "npm run build && concurrently \"npm run build:watch\" \"npm run preview\""
+  }
+}
