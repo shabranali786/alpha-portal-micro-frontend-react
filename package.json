@@ -12,7 +12,7 @@
     "dev:all": "concurrently \"npm run dev --workspace=shell\" \"npm run dev --workspace=dashboard\" \"npm run dev --workspace=sales-report\" \"npm:tailwind\"",
     "install:all": "npm install",
     "build:all": "npm run build --workspaces --if-present",
-    "tailwind": "npx @tailwindcss/cli -i ./src/tailwind.css -o ./src/main.css --watch",
+    "tailwind": "npx @tailwindcss/cli -i ./shell/src/tailwind.css -o ./shell/src/main.css --watch",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
