@@ -1,7 +1,5 @@
 import { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import "./App.css";
-
 // Remote components
 const RemoteDashboard = lazy(() => import("dashboard/Dashboard"));
 const RemoteInvoice = lazy(() => import("sales/Invoice"));
