@@ -290,58 +290,58 @@
     }
       const usedRemotes = [
                 {
-                  entryGlobalName: "http://localhost:5001/assets/remoteEntry.js",
+                  entryGlobalName: "salesMfe",
                   name: "salesMfe",
-                  type: "var",
-                  entry: "http://localhost:5001/assets/remoteEntry.js",
+                  type: "module",
+                  entry: "http://localhost:5001/remoteEntry.js",
                   shareScope: "default",
                 }
           ,
                 {
-                  entryGlobalName: "http://localhost:5002/assets/remoteEntry.js",
+                  entryGlobalName: "financeMfe",
                   name: "financeMfe",
-                  type: "var",
-                  entry: "http://localhost:5002/assets/remoteEntry.js",
+                  type: "module",
+                  entry: "http://localhost:5002/remoteEntry.js",
                   shareScope: "default",
                 }
           ,
                 {
-                  entryGlobalName: "http://localhost:5003/assets/remoteEntry.js",
+                  entryGlobalName: "reportsMfe",
                   name: "reportsMfe",
-                  type: "var",
-                  entry: "http://localhost:5003/assets/remoteEntry.js",
+                  type: "module",
+                  entry: "http://localhost:5003/remoteEntry.js",
                   shareScope: "default",
                 }
           ,
                 {
-                  entryGlobalName: "http://localhost:5004/assets/remoteEntry.js",
+                  entryGlobalName: "accessControlMfe",
                   name: "accessControlMfe",
-                  type: "var",
-                  entry: "http://localhost:5004/assets/remoteEntry.js",
+                  type: "module",
+                  entry: "http://localhost:5004/remoteEntry.js",
                   shareScope: "default",
                 }
           ,
                 {
-                  entryGlobalName: "http://localhost:5005/assets/remoteEntry.js",
+                  entryGlobalName: "brandsMfe",
                   name: "brandsMfe",
-                  type: "var",
-                  entry: "http://localhost:5005/assets/remoteEntry.js",
+                  type: "module",
+                  entry: "http://localhost:5005/remoteEntry.js",
                   shareScope: "default",
                 }
           ,
                 {
-                  entryGlobalName: "http://localhost:5006/assets/remoteEntry.js",
+                  entryGlobalName: "documentsMfe",
                   name: "documentsMfe",
-                  type: "var",
-                  entry: "http://localhost:5006/assets/remoteEntry.js",
+                  type: "module",
+                  entry: "http://localhost:5006/remoteEntry.js",
                   shareScope: "default",
                 }
           ,
                 {
-                  entryGlobalName: "http://localhost:5007/assets/remoteEntry.js",
+                  entryGlobalName: "configMfe",
                   name: "configMfe",
-                  type: "var",
-                  entry: "http://localhost:5007/assets/remoteEntry.js",
+                  type: "module",
+                  entry: "http://localhost:5007/remoteEntry.js",
                   shareScope: "default",
                 }
           

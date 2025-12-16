@@ -50,7 +50,7 @@ export default defineConfig({
         salesMfe: {
           type: "module",
           name: "salesMfe",
-          entry: "http://localhost:5001/remoteEntry.js", // ← NO /assets/
+          entry: "http://localhost:5001/remoteEntry.js",
           entryGlobalName: "salesMfe",
         },
         financeMfe: {
