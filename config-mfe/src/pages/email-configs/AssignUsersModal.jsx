@@ -13,10 +13,10 @@ import {
   BsChevronLeft,
   BsChevronRight,
 } from "react-icons/bs";
-import apiAxios from "../../api/ApiAxios";
-import ApiRequest from "../../api/ApiRequest";
+import apiAxios from "@crm/shared/api/ApiAxios";
+import ApiRequest from "@crm/shared/api/ApiRequest";
 import toast from "react-hot-toast";
-import { usePaginatedData } from "../../hooks/usePaginatedData";
+import { usePaginatedData } from "@crm/shared/hooks/usePaginatedData";
 
 export default function AssignUsersModal({
   open,

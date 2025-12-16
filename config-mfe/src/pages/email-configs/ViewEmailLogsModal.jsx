@@ -10,8 +10,8 @@ import {
 } from "@headlessui/react";
 import DataTable from "react-data-table-component";
 import { format } from "date-fns";
-import apiAxios from "../../api/ApiAxios";
-import ApiRequest from "../../api/ApiRequest";
+import apiAxios from "@crm/shared/api/ApiAxios";
+import ApiRequest from "@crm/shared/api/ApiRequest";
 
 export default function ViewEmailLogsModal({ open, onClose, config }) {
   const [logs, setLogs] = useState([]);

@@ -8,8 +8,8 @@ import {
   DialogTitle,
   TransitionChild,
 } from "@headlessui/react";
-import apiAxios from "../../api/ApiAxios";
-import ApiRequest from "../../api/ApiRequest";
+import apiAxios from "@crm/shared/api/ApiAxios";
+import ApiRequest from "@crm/shared/api/ApiRequest";
 import { format } from "date-fns";
 
 export default function ViewExpenseModal({ open, onClose, expense }) {

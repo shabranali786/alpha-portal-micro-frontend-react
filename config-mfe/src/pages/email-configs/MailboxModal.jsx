@@ -17,8 +17,8 @@ import {
   BsChevronRight,
 } from "react-icons/bs";
 import toast from "react-hot-toast";
-import apiAxios from "../../api/ApiAxios";
-import ApiRequest from "../../api/ApiRequest";
+import apiAxios from "@crm/shared/api/ApiAxios";
+import ApiRequest from "@crm/shared/api/ApiRequest";
 import { format } from "date-fns";
 
 // Format date helper

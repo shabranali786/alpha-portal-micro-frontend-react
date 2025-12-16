@@ -22,19 +22,19 @@ import {
   DropdownTrigger,
   DropdownDivider,
   useDropdown,
-} from "../../components/CustomDropdown";
-import { SearchBox } from "../../components/SearchBox";
-import { FiltersComponent } from "../../components/AllComponents";
+} from "@crm/shared/components/CustomDropdown";
+import { SearchBox } from "@crm/shared/components/SearchBox";
+import { FiltersComponent } from "@crm/shared/components/AllComponents";
 import AddLeadModal from "./AddLeadModal";
 import EditLeadModal from "./EditLeadModal";
 import UpdateStatusModal from "./UpdateStatusModal";
 import AddNoteModal from "./AddNoteModal";
 import DeleteLeadModal from "./DeleteLeadModal";
 import ConfirmTestToggleModal from "./ConfirmTestToggleModal";
-import apiAxios from "../../api/ApiAxios";
-import ApiRequest from "../../api/ApiRequest";
-import { usePaginatedData } from "../../hooks/usePaginatedData";
-import { usePermission } from "../../utils/permissions";
+import apiAxios from "@crm/shared/api/ApiAxios";
+import ApiRequest from "@crm/shared/api/ApiRequest";
+import { usePaginatedData } from "@crm/shared/hooks/usePaginatedData";
+import { usePermission } from "@crm/shared/utils/permissions";
 
 import {
   BsArrowRepeat,

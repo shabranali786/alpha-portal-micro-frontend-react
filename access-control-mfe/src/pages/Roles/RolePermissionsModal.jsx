@@ -7,9 +7,9 @@ import {
   TransitionChild,
 } from "@headlessui/react";
 import toast from "react-hot-toast";
-import ApiRequest from "../../api/ApiRequest";
-import apiAxios from "../../api/ApiAxios";
-import { usePaginatedData } from "../../hooks/usePaginatedData";
+import ApiRequest from "@crm/shared/api/ApiRequest";
+import apiAxios from "@crm/shared/api/ApiAxios";
+import { usePaginatedData } from "@crm/shared/hooks/usePaginatedData";
 import {
   FiChevronRight,
   FiCheck,

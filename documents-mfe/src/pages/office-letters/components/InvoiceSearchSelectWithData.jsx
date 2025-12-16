@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { BsSearch, BsX } from "react-icons/bs";
-import apiAxios from "../../../api/ApiAxios";
-import ApiRequest from "../../../api/ApiRequest";
+import apiAxios from "@crm/shared/api/ApiAxios";
+import ApiRequest from "@crm/shared/api/ApiRequest";
 
 const InvoiceSearchSelectWithData = ({ value, onChange, error }) => {
   const [isOpen, setIsOpen] = useState(false);

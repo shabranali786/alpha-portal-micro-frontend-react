@@ -14,13 +14,13 @@ import {
   DropdownTrigger,
   DropdownDivider,
   useDropdown,
-} from "../../components/CustomDropdown";
-import apiAxios from "../../api/ApiAxios";
-import ApiRequest from "../../api/ApiRequest";
-import { SearchBox } from "../../components/SearchBox";
+} from "@crm/shared/components/CustomDropdown";
+import apiAxios from "@crm/shared/api/ApiAxios";
+import ApiRequest from "@crm/shared/api/ApiRequest";
+import { SearchBox } from "@crm/shared/components/SearchBox";
 import { BsArrowRepeat, BsPlus } from "react-icons/bs";
-import { usePaginatedData } from "../../hooks/usePaginatedData";
-import { usePermission } from "../../utils/permissions";
+import { usePaginatedData } from "@crm/shared/hooks/usePaginatedData";
+import { usePermission } from "@crm/shared/utils/permissions";
 
 const Permissions = () => {
   const canCreatePermission = usePermission(["permission.create"]);

@@ -2,22 +2,22 @@ import React, { useMemo, useState } from "react";
 import DataTable from "react-data-table-component";
 import { BsShieldLock, BsPlus, BsPencil, BsTrash, BsEye } from "react-icons/bs";
 import { FiRefreshCw } from "react-icons/fi";
-import { SearchBox } from "../../components/SearchBox";
+import { SearchBox } from "@crm/shared/components/SearchBox";
 import {
   CustomDropdown,
   DropdownItem,
   DropdownTrigger,
   useDropdown,
-} from "../../components/CustomDropdown";
-import { usePaginatedData } from "../../hooks/usePaginatedData";
-import ApiRequest from "../../api/ApiRequest";
-import apiAxios from "../../api/ApiAxios";
+} from "@crm/shared/components/CustomDropdown";
+import { usePaginatedData } from "@crm/shared/hooks/usePaginatedData";
+import ApiRequest from "@crm/shared/api/ApiRequest";
+import apiAxios from "@crm/shared/api/ApiAxios";
 import toast from "react-hot-toast";
 import AddIPModal from "./AddIPModal";
 import EditIPModal from "./EditIPModal";
-import DeleteModal from "../../components/DeleteModal";
+import DeleteModal from "@crm/shared/components/DeleteModal";
 import ViewIPModal from "./ViewIPModal";
-import { usePermission } from "../../utils/permissions";
+import { usePermission } from "@crm/shared/utils/permissions";
 
 const IP = () => {
   const canCreateIP = usePermission(["ip.create"]);

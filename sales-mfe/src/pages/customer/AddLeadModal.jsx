@@ -7,9 +7,9 @@ import {
   TransitionChild,
 } from "@headlessui/react";
 import Select from "react-select";
-import apiAxios from "../../api/ApiAxios";
-import ApiRequest from "../../api/ApiRequest";
-import { useSelectStyles } from "../../hooks/useSelectStyles";
+import apiAxios from "@crm/shared/api/ApiAxios";
+import ApiRequest from "@crm/shared/api/ApiRequest";
+import { useSelectStyles } from "@crm/shared/hooks/useSelectStyles";
 
 export default function AddLeadModal({ open, onClose, onSubmit, loading }) {
   const [formData, setFormData] = useState({

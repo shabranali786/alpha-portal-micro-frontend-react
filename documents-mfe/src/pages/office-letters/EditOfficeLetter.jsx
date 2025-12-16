@@ -6,8 +6,8 @@ import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import "ckeditor5/ckeditor5.css";
 import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
-import apiAxios from "../../api/ApiAxios";
-import ApiRequest from "../../api/ApiRequest";
+import apiAxios from "@crm/shared/api/ApiAxios";
+import ApiRequest from "@crm/shared/api/ApiRequest";
 import OfficeLetterPreview from "./components/OfficeLetterPreview";
 
 const EditOfficeLetter = () => {

@@ -3,9 +3,9 @@ import { useParams, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import Select from "react-select";
 import DataTable from "react-data-table-component";
-import apiAxios from "../../api/ApiAxios";
-import ApiRequest from "../../api/ApiRequest";
-import { useSelectStyles } from "../../hooks/useSelectStyles";
+import apiAxios from "@crm/shared/api/ApiAxios";
+import ApiRequest from "@crm/shared/api/ApiRequest";
+import { useSelectStyles } from "@crm/shared/hooks/useSelectStyles";
 import Communication from "../lead/Communication";
 import {
   BsFillMapFill,
@@ -14,7 +14,7 @@ import {
   BsEnvelope,
   BsArrowRepeat,
 } from "react-icons/bs";
-import { usePaginatedData } from "../../hooks/usePaginatedData";
+import { usePaginatedData } from "@crm/shared/hooks/usePaginatedData";
 
 const LeadDetails = () => {
   const { id } = useParams();

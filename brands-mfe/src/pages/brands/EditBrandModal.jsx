@@ -8,9 +8,9 @@ import {
 } from "@headlessui/react";
 import Select from "react-select";
 
-import { useSelectStyles } from "../../hooks/useSelectStyles";
-import apiAxios from "../../api/ApiAxios";
-import ApiRequest from "../../api/ApiRequest";
+import { useSelectStyles } from "@crm/shared/hooks/useSelectStyles";
+import apiAxios from "@crm/shared/api/ApiAxios";
+import ApiRequest from "@crm/shared/api/ApiRequest";
 
 export default function EditBrandModal({
   open,
@@ -182,7 +182,8 @@ export default function EditBrandModal({
       const brandChat = currentBrand.alpha_chat
         ? {
             value: currentBrand.alpha_chat.id || currentBrand.alpha_chat_id,
-            label: currentBrand.alpha_chat.title || currentBrand.alpha_chat.name,
+            label:
+              currentBrand.alpha_chat.title || currentBrand.alpha_chat.name,
           }
         : null;
 

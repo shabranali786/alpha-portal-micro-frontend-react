@@ -9,8 +9,8 @@ import {
   BsChevronDown,
   BsChevronUp,
 } from "react-icons/bs";
-import apiAxios from "../../api/ApiAxios";
-import ApiRequest from "../../api/ApiRequest";
+import apiAxios from "@crm/shared/api/ApiAxios";
+import ApiRequest from "@crm/shared/api/ApiRequest";
 
 const ViewInvoicePage = () => {
   const navigate = useNavigate();

@@ -4,7 +4,7 @@ import SideMenus from "./SideMenus";
 import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
 import { EventListener } from "../EventListener";
-import { useDarkMode } from "../../hooks/useDarkMode";
+import { useDarkMode } from "@crm/shared/hooks/useDarkMode";
 
 const Master = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -20,7 +20,6 @@ const Master = () => {
       ? setSidebarMinimized((prev) => !prev)
       : setSidebarOpen(false);
   }, [isLargeScreen]);
-
 
   useEffect(() => {
     const handleResize = () => setIsLargeScreen(window.innerWidth >= 992);

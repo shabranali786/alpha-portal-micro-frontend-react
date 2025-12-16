@@ -6,8 +6,8 @@ import {
   DialogTitle,
   TransitionChild,
 } from "@headlessui/react";
-import apiAxios from "../../api/ApiAxios";
-import ApiRequest from "../../api/ApiRequest";
+import apiAxios from "@crm/shared/api/ApiAxios";
+import ApiRequest from "@crm/shared/api/ApiRequest";
 
 export default function ViewMerchantModal({ open, onClose, merchant }) {
   const [merchantDetails, setMerchantDetails] = useState(null);

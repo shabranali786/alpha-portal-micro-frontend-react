@@ -6,8 +6,8 @@ import {
   DialogTitle,
   TransitionChild,
 } from "@headlessui/react";
-import apiAxios from "../../api/ApiAxios";
-import ApiRequest from "../../api/ApiRequest";
+import apiAxios from "@crm/shared/api/ApiAxios";
+import ApiRequest from "@crm/shared/api/ApiRequest";
 
 export default function ViewBrandModal({ open, onClose, brand }) {
   const [brandDetails, setBrandDetails] = useState(null);
@@ -165,7 +165,9 @@ export default function ViewBrandModal({ open, onClose, brand }) {
                               Alpha Chat
                             </label>
                             <div className="p-3 bg-gray-50 dark:bg-slate-800/60 rounded-lg text-gray-900 dark:text-slate-100">
-                              {displayBrand?.alpha_chat?.title || displayBrand?.alpha_chat?.name || "N/A"}
+                              {displayBrand?.alpha_chat?.title ||
+                                displayBrand?.alpha_chat?.name ||
+                                "N/A"}
                             </div>
                           </div>
                         </div>

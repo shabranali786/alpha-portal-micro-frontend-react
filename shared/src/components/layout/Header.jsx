@@ -12,11 +12,16 @@ import {
   BsPersonGear,
   BsArrowsFullscreen,
 } from "react-icons/bs";
-import NetworkStatusIndicator from "../../components/NetworkStatusIndicator";
+import NetworkStatusIndicator from "@crm/shared/components/NetworkStatusIndicator";
 import SessionTimer from "../SessionTimer";
 import WeatherWidget from "../WeatherWidget";
 
-const Header = ({ onOpenMenu, isDarkMode, onToggleDarkMode, isSidebarMinimized }) => {
+const Header = ({
+  onOpenMenu,
+  isDarkMode,
+  onToggleDarkMode,
+  isSidebarMinimized,
+}) => {
   const { user } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -65,11 +70,7 @@ const Header = ({ onOpenMenu, isDarkMode, onToggleDarkMode, isSidebarMinimized }
             ☰
           </button>
           {isSidebarMinimized && (
-            <img
-              src="/fav.svg"
-              alt="Logo"
-              className="h-8 w-8 object-contain"
-            />
+            <img src="/fav.svg" alt="Logo" className="h-8 w-8 object-contain" />
           )}
           <button
             type="button"

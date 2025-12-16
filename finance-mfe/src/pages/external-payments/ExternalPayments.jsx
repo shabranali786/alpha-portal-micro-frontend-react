@@ -14,12 +14,12 @@ import {
   DropdownTrigger,
   DropdownDivider,
   useDropdown,
-} from "../../components/CustomDropdown";
-import { SearchBox } from "../../components/SearchBox";
-import { FiltersComponent } from "../../components/AllComponents";
+} from "@crm/shared/components/CustomDropdown";
+import { SearchBox } from "@crm/shared/components/SearchBox";
+import { FiltersComponent } from "@crm/shared/components/AllComponents";
 import DeleteExternalPaymentModal from "./DeleteExternalPaymentModal";
-import apiAxios from "../../api/ApiAxios";
-import ApiRequest from "../../api/ApiRequest";
+import apiAxios from "@crm/shared/api/ApiAxios";
+import ApiRequest from "@crm/shared/api/ApiRequest";
 import {
   BsArrowRepeat,
   BsPlus,
@@ -34,8 +34,8 @@ import {
   BsSquare,
   BsExclamationTriangle,
 } from "react-icons/bs";
-import { usePaginatedData } from "../../hooks/usePaginatedData";
-import { usePermission } from "../../utils/permissions";
+import { usePaginatedData } from "@crm/shared/hooks/usePaginatedData";
+import { usePermission } from "@crm/shared/utils/permissions";
 
 const ExternalPayments = () => {
   const navigate = useNavigate();

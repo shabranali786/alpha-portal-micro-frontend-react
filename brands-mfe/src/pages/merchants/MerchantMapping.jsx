@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { BsSearch, BsArrowRepeat } from "react-icons/bs";
 import Select from "react-select";
 
-import { useSelectStyles } from "../../hooks/useSelectStyles";
+import { useSelectStyles } from "@crm/shared/hooks/useSelectStyles";
 import DataTable from "react-data-table-component";
 
 import toast from "react-hot-toast";
@@ -12,10 +12,10 @@ import {
   TransitionChild,
   DialogPanel,
 } from "@headlessui/react";
-import apiAxios from "../../api/ApiAxios";
-import ApiRequest from "../../api/ApiRequest";
-import FiltersComponent from "../../components/FiltersComponent";
-import { usePaginatedData } from "../../hooks/usePaginatedData";
+import apiAxios from "@crm/shared/api/ApiAxios";
+import ApiRequest from "@crm/shared/api/ApiRequest";
+import FiltersComponent from "@crm/shared/components/FiltersComponent";
+import { usePaginatedData } from "@crm/shared/hooks/usePaginatedData";
 
 const mappingTypes = [
   {
@@ -340,13 +340,13 @@ const MerchantMapping = () => {
         const key = `${brandIds[0]}::${selectedType}`;
         const assigned = brandAssignments[key] ?? [];
         setSelectedMerchantIds(
-          new Set(isSingleSelect ? assigned.slice(0, 1) : assigned),
+          new Set(isSingleSelect ? assigned.slice(0, 1) : assigned)
         );
       } else {
         setSelectedMerchantIds(new Set());
       }
     },
-    [brandAssignments, selectedType, isSingleSelect],
+    [brandAssignments, selectedType, isSingleSelect]
   );
 
   useEffect(() => {
@@ -356,7 +356,7 @@ const MerchantMapping = () => {
       return;
     }
     const unitBrandIds = units[0].teams.flatMap((team) =>
-      team.brands.map((b) => b.id),
+      team.brands.map((b) => b.id)
     );
     const defaultSelection = unitBrandIds.length
       ? new Set([unitBrandIds[0]])
@@ -374,7 +374,7 @@ const MerchantMapping = () => {
       setMerchantsLoading(true);
       try {
         const response = await apiAxios.get(
-          `${ApiRequest.merchants.list}?per_page=100&page=1&with_counts=true`,
+          `${ApiRequest.merchants.list}?per_page=100&page=1&with_counts=true`
         );
         const merchantsData = response.data?.data || [];
 
@@ -411,7 +411,7 @@ const MerchantMapping = () => {
       setTeamsLoading(true);
       try {
         const response = await apiAxios.get(
-          `${ApiRequest.teams.list}?unit_id=${selectedUnit.value}&with_merchants=true`,
+          `${ApiRequest.teams.list}?unit_id=${selectedUnit.value}&with_merchants=true`
         );
         const teamsData = response.data?.data || [];
 
@@ -505,7 +505,7 @@ const MerchantMapping = () => {
         : merchantsCatalog;
 
     const typeFiltered = catalogToUse.filter((m) =>
-      m.supportedTypes.includes(selectedType),
+      m.supportedTypes.includes(selectedType)
     );
     const term = merchantSearch.trim().toLowerCase();
     return term
@@ -525,7 +525,7 @@ const MerchantMapping = () => {
     const team = units[0]?.teams?.find((t) => t.id === teamId);
     if (!team) return;
     setSelectedBrandIds(
-      (prev) => new Set([...prev, ...team.brands.map((b) => b.id)]),
+      (prev) => new Set([...prev, ...team.brands.map((b) => b.id)])
     );
   };
 
@@ -534,7 +534,7 @@ const MerchantMapping = () => {
     if (!team) return;
     const ids = new Set(team.brands.map((b) => b.id));
     setSelectedBrandIds(
-      (prev) => new Set([...prev].filter((id) => !ids.has(id))),
+      (prev) => new Set([...prev].filter((id) => !ids.has(id)))
     );
   };
 
@@ -603,7 +603,7 @@ const MerchantMapping = () => {
       (selectedType !== "invoice" || assignMode !== "replace")
     ) {
       toast.error(
-        "Update unpaid invoices only works with Invoice type and Replace mode.",
+        "Update unpaid invoices only works with Invoice type and Replace mode."
       );
       return;
     }
@@ -624,7 +624,7 @@ const MerchantMapping = () => {
 
           // Use brand-wise mapping from UI if available
           const hasValidMapping = Object.keys(brandMerchantMapping).some(
-            (key) => brandMerchantMapping[key] !== null,
+            (key) => brandMerchantMapping[key] !== null
           );
 
           if (hasValidMapping) {
@@ -652,7 +652,7 @@ const MerchantMapping = () => {
 
       const response = await apiAxios.post(
         ApiRequest.MerchantMapping.assign,
-        payload,
+        payload
       );
 
       setBrandAssignments((prev) => {
@@ -678,12 +678,12 @@ const MerchantMapping = () => {
             assignMode === "replace" ? "replaced" : "appended"
           } merchants for ${brandIds.length} brand${
             brandIds.length === 1 ? "" : "s"
-          }.`,
+          }.`
       );
 
       if (selectedUnit) {
         const teamsResponse = await apiAxios.get(
-          `${ApiRequest.teams.list}?unit_id=${selectedUnit.value}&with_merchants=true`,
+          `${ApiRequest.teams.list}?unit_id=${selectedUnit.value}&with_merchants=true`
         );
         const teamsData = teamsResponse.data?.data || [];
 
@@ -714,7 +714,7 @@ const MerchantMapping = () => {
       console.error("Error assigning merchants:", error);
       toast.error(
         error.response?.data?.message ||
-          "Failed to assign merchants. Please try again.",
+          "Failed to assign merchants. Please try again."
       );
     } finally {
       setIsSaving(false);
@@ -764,13 +764,13 @@ const MerchantMapping = () => {
     if (!firstBrandMerchant) return null;
 
     const allSame = brandIds.every(
-      (brandId) => brandMerchantMapping[brandId] === firstBrandMerchant,
+      (brandId) => brandMerchantMapping[brandId] === firstBrandMerchant
     );
 
     if (allSame) {
       return (
         selectedMerchantOptions.find(
-          (opt) => opt.value === firstBrandMerchant,
+          (opt) => opt.value === firstBrandMerchant
         ) || null
       );
     }
@@ -951,7 +951,7 @@ const MerchantMapping = () => {
                                       <span className="text-slate-600 dark:text-slate-300 text-xs">
                                         {renderAssignmentsSummary(
                                           brand.id,
-                                          type,
+                                          type
                                         )}
                                       </span>
                                     </p>
@@ -1120,7 +1120,7 @@ const MerchantMapping = () => {
                             <Select
                               options={modeOptions}
                               value={modeOptions.find(
-                                (o) => o.value === assignMode,
+                                (o) => o.value === assignMode
                               )}
                               onChange={(opt) =>
                                 setAssignMode(opt?.value || "replace")
@@ -1255,7 +1255,7 @@ const MerchantMapping = () => {
                                     Array.from(selectedBrandIds).forEach(
                                       (brandId) => {
                                         newMapping[brandId] = opt.value;
-                                      },
+                                      }
                                     );
                                     setBrandMerchantMapping(newMapping);
                                   } else {
@@ -1298,7 +1298,7 @@ const MerchantMapping = () => {
                                                     opt.value ===
                                                     brandMerchantMapping[
                                                       brandId
-                                                    ],
+                                                    ]
                                                 ) || null
                                               : null
                                           }

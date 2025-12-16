@@ -8,9 +8,9 @@ import {
   BsFillPeopleFill,
   BsWallet2,
 } from "react-icons/bs";
-import ApiRequest from "../../api/ApiRequest";
-import { SearchBox } from "../../components/SearchBox";
-import apiAxios from "../../api/ApiAxios";
+import ApiRequest from "@crm/shared/api/ApiRequest";
+import { SearchBox } from "@crm/shared/components/SearchBox";
+import apiAxios from "@crm/shared/api/ApiAxios";
 
 const MerchantReport = () => {
   const today = new Date().toISOString().split("T")[0];

@@ -8,7 +8,7 @@ import {
 } from "@headlessui/react";
 import Select from "react-select";
 
-import { useSelectStyles } from "../../hooks/useSelectStyles";
+import { useSelectStyles } from "@crm/shared/hooks/useSelectStyles";
 
 export default function AddPermissionModal({
   open,

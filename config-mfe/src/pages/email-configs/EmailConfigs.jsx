@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import DataTable from "react-data-table-component";
 import { BsArrowRepeat, BsPlus, BsUpload } from "react-icons/bs";
-import { SearchBox } from "../../components/SearchBox";
-import ApiRequest from "../../api/ApiRequest";
-import { usePaginatedData } from "../../hooks/usePaginatedData";
+import { SearchBox } from "@crm/shared/components/SearchBox";
+import ApiRequest from "@crm/shared/api/ApiRequest";
+import { usePaginatedData } from "@crm/shared/hooks/usePaginatedData";
 import { format } from "date-fns";
 import {
   CustomDropdown,
@@ -11,10 +11,10 @@ import {
   DropdownTrigger,
   DropdownDivider,
   useDropdown,
-} from "../../components/CustomDropdown";
-import { usePermission } from "../../utils/permissions";
+} from "@crm/shared/components/CustomDropdown";
+import { usePermission } from "@crm/shared/utils/permissions";
 import toast from "react-hot-toast";
-import apiAxios from "../../api/ApiAxios";
+import apiAxios from "@crm/shared/api/ApiAxios";
 import AddEmailConfigModal from "./AddEmailConfigModal";
 import EditEmailConfigModal from "./EditEmailConfigModal";
 import DeleteEmailConfigModal from "./DeleteEmailConfigModal";

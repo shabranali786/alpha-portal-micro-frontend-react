@@ -9,11 +9,11 @@ import {
   BsShieldCheck,
   BsWallet2,
 } from "react-icons/bs";
-import { SearchBox } from "../../components/SearchBox";
-import ApiRequest from "../../api/ApiRequest";
-import { usePaginatedData } from "../../hooks/usePaginatedData";
+import { SearchBox } from "@crm/shared/components/SearchBox";
+import ApiRequest from "@crm/shared/api/ApiRequest";
+import { usePaginatedData } from "@crm/shared/hooks/usePaginatedData";
 import { useNavigate } from "react-router-dom";
-import { usePermission } from "../../utils/permissions";
+import { usePermission } from "@crm/shared/utils/permissions";
 
 const currency = new Intl.NumberFormat(undefined, {
   style: "currency",
@@ -212,7 +212,7 @@ const Transactions = () => {
       {
         name: "Action",
         right: true,
-        cell: (row) => (
+        cell: (row) =>
           canViewTransaction && (
             <button
               type="button"
@@ -226,8 +226,7 @@ const Transactions = () => {
             >
               <BsEye />
             </button>
-          )
-        ),
+          ),
       },
     ],
     [navigate]

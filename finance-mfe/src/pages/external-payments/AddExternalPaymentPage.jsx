@@ -8,13 +8,13 @@ import React, {
 import { useNavigate, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Select from "react-select";
-import { useSelectStyles } from "../../hooks/useSelectStyles";
-import { FiltersComponent } from "../../components/AllComponents";
+import { useSelectStyles } from "@crm/shared/hooks/useSelectStyles";
+import { FiltersComponent } from "@crm/shared/components/AllComponents";
 import toast from "react-hot-toast";
 import { BsArrowLeft, BsPlus, BsTrash, BsUpload } from "react-icons/bs";
-import apiAxios from "../../api/ApiAxios";
-import ApiRequest from "../../api/ApiRequest";
-import { usePermission } from "../../utils/permissions";
+import apiAxios from "@crm/shared/api/ApiAxios";
+import ApiRequest from "@crm/shared/api/ApiRequest";
+import { usePermission } from "@crm/shared/utils/permissions";
 
 const AddExternalPaymentPage = () => {
   const canCreateExternalPayment = usePermission([
@@ -100,22 +100,25 @@ const AddExternalPaymentPage = () => {
   const merchantRequiresProof = formData.merchant?.proof_required === true;
 
   // Handle filter changes from FiltersComponent
-  const handleFilterChange = useCallback((filterType, selectedOption) => {
-    if (filterType === "user") {
-      setFormData((prev) => ({ ...prev, assigned_user: selectedOption }));
-      if (errors.assigned_user) {
-        setErrors((prev) => ({ ...prev, assigned_user: "" }));
+  const handleFilterChange = useCallback(
+    (filterType, selectedOption) => {
+      if (filterType === "user") {
+        setFormData((prev) => ({ ...prev, assigned_user: selectedOption }));
+        if (errors.assigned_user) {
+          setErrors((prev) => ({ ...prev, assigned_user: "" }));
+        }
+      } else if (filterType === "merchant") {
+        setFormData((prev) => ({ ...prev, merchant: selectedOption }));
+        if (!selectedOption?.proof_required) {
+          setFormData((prev) => ({ ...prev, proof_of_payment: "" }));
+        }
+        if (errors.merchant) {
+          setErrors((prev) => ({ ...prev, merchant: "" }));
+        }
       }
-    } else if (filterType === "merchant") {
-      setFormData((prev) => ({ ...prev, merchant: selectedOption }));
-      if (!selectedOption?.proof_required) {
-        setFormData((prev) => ({ ...prev, proof_of_payment: "" }));
-      }
-      if (errors.merchant) {
-        setErrors((prev) => ({ ...prev, merchant: "" }));
-      }
-    }
-  }, [errors.assigned_user, errors.merchant]);
+    },
+    [errors.assigned_user, errors.merchant]
+  );
 
   const fetchTeams = useCallback(async () => {
     try {

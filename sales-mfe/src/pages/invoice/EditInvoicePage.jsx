@@ -8,12 +8,12 @@ import React, {
 import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Select from "react-select";
-import { useSelectStyles } from "../../hooks/useSelectStyles";
-import { FiltersComponent } from "../../components/AllComponents";
+import { useSelectStyles } from "@crm/shared/hooks/useSelectStyles";
+import { FiltersComponent } from "@crm/shared/components/AllComponents";
 import toast from "react-hot-toast";
 import { BsArrowLeft, BsPlus, BsTrash } from "react-icons/bs";
-import apiAxios from "../../api/ApiAxios";
-import ApiRequest from "../../api/ApiRequest";
+import apiAxios from "@crm/shared/api/ApiAxios";
+import ApiRequest from "@crm/shared/api/ApiRequest";
 
 const EditInvoicePage = () => {
   const navigate = useNavigate();
@@ -50,19 +50,22 @@ const EditInvoicePage = () => {
   }, [userData, isSuperAdmin]);
 
   // Handle filter changes from FiltersComponent
-  const handleFilterChange = useCallback((filterType, selectedOption) => {
-    if (filterType === "user") {
-      setFormData((prev) => ({ ...prev, assigned_user: selectedOption }));
-      if (errors.assigned_user) {
-        setErrors((prev) => ({ ...prev, assigned_user: "" }));
+  const handleFilterChange = useCallback(
+    (filterType, selectedOption) => {
+      if (filterType === "user") {
+        setFormData((prev) => ({ ...prev, assigned_user: selectedOption }));
+        if (errors.assigned_user) {
+          setErrors((prev) => ({ ...prev, assigned_user: "" }));
+        }
+      } else if (filterType === "merchant") {
+        setFormData((prev) => ({ ...prev, merchant: selectedOption }));
+        if (errors.merchant) {
+          setErrors((prev) => ({ ...prev, merchant: "" }));
+        }
       }
-    } else if (filterType === "merchant") {
-      setFormData((prev) => ({ ...prev, merchant: selectedOption }));
-      if (errors.merchant) {
-        setErrors((prev) => ({ ...prev, merchant: "" }));
-      }
-    }
-  }, [errors.assigned_user, errors.merchant]);
+    },
+    [errors.assigned_user, errors.merchant]
+  );
 
   const fetchTeams = useCallback(async () => {
     try {
@@ -200,10 +203,7 @@ const EditInvoicePage = () => {
     const loadData = async () => {
       setPageLoading(true);
       try {
-        await Promise.all([
-          fetchInvoice(),
-          fetchTeams(),
-        ]);
+        await Promise.all([fetchInvoice(), fetchTeams()]);
       } catch (error) {
         console.error("Error loading data:", error);
       } finally {
@@ -538,7 +538,8 @@ const EditInvoicePage = () => {
                       isMerchantSearchable={true}
                       merchantLabel={
                         <>
-                          Select Merchant <span className="text-red-500">*</span>
+                          Select Merchant{" "}
+                          <span className="text-red-500">*</span>
                         </>
                       }
                       // Hide all other filters

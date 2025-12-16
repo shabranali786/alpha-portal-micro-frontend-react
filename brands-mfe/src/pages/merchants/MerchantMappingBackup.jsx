@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import Select from "react-select";
 
-import { useSelectStyles } from "../../hooks/useSelectStyles";
+import { useSelectStyles } from "@crm/shared/hooks/useSelectStyles";
 import DataTable from "react-data-table-component";
 
 import toast from "react-hot-toast";

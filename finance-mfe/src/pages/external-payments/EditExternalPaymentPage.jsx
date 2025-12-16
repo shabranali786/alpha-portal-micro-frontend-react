@@ -2,13 +2,13 @@ import React, { useEffect, useMemo, useState, useCallback } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Select from "react-select";
-import { useSelectStyles } from "../../hooks/useSelectStyles";
-import { FiltersComponent } from "../../components/AllComponents";
+import { useSelectStyles } from "@crm/shared/hooks/useSelectStyles";
+import { FiltersComponent } from "@crm/shared/components/AllComponents";
 import toast from "react-hot-toast";
 import { BsArrowLeft, BsPlus, BsTrash, BsUpload } from "react-icons/bs";
-import apiAxios from "../../api/ApiAxios";
-import ApiRequest from "../../api/ApiRequest";
-import { usePermission } from "../../utils/permissions";
+import apiAxios from "@crm/shared/api/ApiAxios";
+import ApiRequest from "@crm/shared/api/ApiRequest";
+import { usePermission } from "@crm/shared/utils/permissions";
 
 const EditExternalPaymentPage = () => {
   const canEditExternalPayment = usePermission(["invoice.otherPayments.edit"]);

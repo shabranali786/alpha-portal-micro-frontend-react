@@ -9,8 +9,8 @@ import {
   BsReceiptCutoff,
   BsFileEarmarkText,
 } from "react-icons/bs";
-import ApiRequest from "../../api/ApiRequest";
-import apiAxios from "../../api/ApiAxios";
+import ApiRequest from "@crm/shared/api/ApiRequest";
+import apiAxios from "@crm/shared/api/ApiAxios";
 
 const CombinedSalesReport = () => {
   // Get default date range (last 30 days)

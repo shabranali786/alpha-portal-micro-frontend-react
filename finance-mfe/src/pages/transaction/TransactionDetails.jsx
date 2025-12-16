@@ -10,9 +10,9 @@ import {
   BsShieldCheck,
   BsWallet2,
 } from "react-icons/bs";
-import apiAxios from "../../api/ApiAxios";
-import ApiRequest from "../../api/ApiRequest";
-import { usePermission } from "../../utils/permissions";
+import apiAxios from "@crm/shared/api/ApiAxios";
+import ApiRequest from "@crm/shared/api/ApiRequest";
+import { usePermission } from "@crm/shared/utils/permissions";
 
 const currency = new Intl.NumberFormat(undefined, {
   style: "currency",

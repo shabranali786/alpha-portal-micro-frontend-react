@@ -2,15 +2,15 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useSelector } from "react-redux";
 import toast from "react-hot-toast";
 import Select from "react-select";
-import { usePermission } from "../../utils/permissions";
+import { usePermission } from "@crm/shared/utils/permissions";
 
-import { useSelectStyles } from "../../hooks/useSelectStyles";
+import { useSelectStyles } from "@crm/shared/hooks/useSelectStyles";
 import AddPackageModal from "./AddPackageModal";
 import EditPackageModal from "./EditPackageModal";
 import DeletePackageModal from "./DeletePackageModal";
 import ViewPackageModal from "./ViewPackageModal";
-import apiAxios from "../../api/ApiAxios";
-import ApiRequest from "../../api/ApiRequest";
+import apiAxios from "@crm/shared/api/ApiAxios";
+import ApiRequest from "@crm/shared/api/ApiRequest";
 import { BsArrowRepeat, BsPlus } from "react-icons/bs";
 
 const PackagesMap = () => {
@@ -564,7 +564,6 @@ const PackagesMap = () => {
       </div>
     );
   };
-
 
   return (
     <>

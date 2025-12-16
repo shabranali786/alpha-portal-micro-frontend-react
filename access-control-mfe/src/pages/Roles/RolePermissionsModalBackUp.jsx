@@ -6,9 +6,9 @@ import {
   DialogTitle,
   TransitionChild,
 } from "@headlessui/react";
-import ApiRequest from "../../api/ApiRequest";
-import { SearchBox } from "../../components/SearchBox";
-import { usePaginatedData } from "../../hooks/usePaginatedData";
+import ApiRequest from "@crm/shared/api/ApiRequest";
+import { SearchBox } from "@crm/shared/components/SearchBox";
+import { usePaginatedData } from "@crm/shared/hooks/usePaginatedData";
 
 export default function RolePermissionsModal({
   open,

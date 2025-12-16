@@ -9,8 +9,8 @@ import {
   TransitionChild,
 } from "@headlessui/react";
 import Select from "react-select";
-import { useSelectStyles } from "../../hooks/useSelectStyles";
-import FiltersComponent from "../../components/FiltersComponent";
+import { useSelectStyles } from "@crm/shared/hooks/useSelectStyles";
+import FiltersComponent from "@crm/shared/components/FiltersComponent";
 
 export default function AddExpenseModal({ open, onClose, onSubmit, loading }) {
   const [formData, setFormData] = useState({

@@ -7,15 +7,15 @@ import {
   DropdownTrigger,
   DropdownDivider,
   useDropdown,
-} from "../../components/CustomDropdown";
-import { SearchBox } from "../../components/SearchBox";
+} from "@crm/shared/components/CustomDropdown";
+import { SearchBox } from "@crm/shared/components/SearchBox";
 import AddChargebackModal from "./AddChargebackModal";
 import EditChargebackModal from "./EditChargebackModal";
 import DeleteChargebackModal from "./DeleteChargebackModal";
 import ViewChargebackModal from "./ViewChargebackModal";
-import apiAxios from "../../api/ApiAxios";
-import ApiRequest from "../../api/ApiRequest";
-import { usePaginatedData } from "../../hooks/usePaginatedData";
+import apiAxios from "@crm/shared/api/ApiAxios";
+import ApiRequest from "@crm/shared/api/ApiRequest";
+import { usePaginatedData } from "@crm/shared/hooks/usePaginatedData";
 import {
   BsArrowRepeat,
   BsPlus,
@@ -30,7 +30,7 @@ import {
   BsThreeDotsVertical,
 } from "react-icons/bs";
 import { FiEdit, FiEye, FiTrash2 } from "react-icons/fi";
-import { usePermission } from "../../utils/permissions";
+import { usePermission } from "@crm/shared/utils/permissions";
 
 const Chargebacks = () => {
   const canCreateChargeback = usePermission(["chargeback.create"]);

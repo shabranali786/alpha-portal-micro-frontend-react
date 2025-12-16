@@ -12,12 +12,12 @@ import {
   BsEnvelope,
 } from "react-icons/bs";
 import toast from "react-hot-toast";
-import apiAxios from "../../api/ApiAxios";
-import ApiRequest from "../../api/ApiRequest";
+import apiAxios from "@crm/shared/api/ApiAxios";
+import ApiRequest from "@crm/shared/api/ApiRequest";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import "ckeditor5/ckeditor5.css";
-import { usePaginatedData } from "../../hooks/usePaginatedData";
+import { usePaginatedData } from "@crm/shared/hooks/usePaginatedData";
 import { Link } from "react-router-dom";
 
 export default function EmailHistory({ lead }) {

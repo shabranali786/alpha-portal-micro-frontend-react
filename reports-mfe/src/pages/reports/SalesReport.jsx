@@ -8,11 +8,11 @@ import {
   TransitionChild,
 } from "@headlessui/react";
 import { BsFilter, BsArrowRepeat } from "react-icons/bs";
-import { SearchBox } from "../../components/SearchBox";
-import { FiltersComponent } from "../../components/AllComponents";
-import apiAxios from "../../api/ApiAxios";
-import ApiRequest from "../../api/ApiRequest";
-import { usePaginatedData } from "../../hooks/usePaginatedData";
+import { SearchBox } from "@crm/shared/components/SearchBox";
+import { FiltersComponent } from "@crm/shared/components/AllComponents";
+import apiAxios from "@crm/shared/api/ApiAxios";
+import ApiRequest from "@crm/shared/api/ApiRequest";
+import { usePaginatedData } from "@crm/shared/hooks/usePaginatedData";
 
 const SalesReport = () => {
   const [activeModal, setActiveModal] = useState(null);

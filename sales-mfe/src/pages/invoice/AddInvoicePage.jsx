@@ -8,12 +8,12 @@ import React, {
 import { useNavigate, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Select from "react-select";
-import { useSelectStyles } from "../../hooks/useSelectStyles";
-import { FiltersComponent } from "../../components/AllComponents";
+import { useSelectStyles } from "@crm/shared/hooks/useSelectStyles";
+import { FiltersComponent } from "@crm/shared/components/AllComponents";
 import toast from "react-hot-toast";
 import { BsArrowLeft, BsPlus, BsTrash } from "react-icons/bs";
-import apiAxios from "../../api/ApiAxios";
-import ApiRequest from "../../api/ApiRequest";
+import apiAxios from "@crm/shared/api/ApiAxios";
+import ApiRequest from "@crm/shared/api/ApiRequest";
 
 const AddInvoicePage = () => {
   const navigate = useNavigate();
@@ -726,7 +726,8 @@ const AddInvoicePage = () => {
                       isMerchantSearchable={true}
                       merchantLabel={
                         <>
-                          Select Merchant <span className="text-red-500">*</span>
+                          Select Merchant{" "}
+                          <span className="text-red-500">*</span>
                         </>
                       }
                       // Hide all other filters

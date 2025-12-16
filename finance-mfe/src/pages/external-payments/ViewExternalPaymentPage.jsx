@@ -9,9 +9,9 @@ import {
   BsChevronDown,
   BsChevronUp,
 } from "react-icons/bs";
-import apiAxios from "../../api/ApiAxios";
-import ApiRequest from "../../api/ApiRequest";
-import { usePermission } from "../../utils/permissions";
+import apiAxios from "@crm/shared/api/ApiAxios";
+import ApiRequest from "@crm/shared/api/ApiRequest";
+import { usePermission } from "@crm/shared/utils/permissions";
 
 const ViewExternalPaymentPage = () => {
   const canViewExternalPayment = usePermission(["invoice.otherPayments.show"]);

@@ -8,17 +8,17 @@ import {
   DropdownTrigger,
   DropdownDivider,
   useDropdown,
-} from "../../components/CustomDropdown";
-import { SearchBox } from "../../components/SearchBox";
+} from "@crm/shared/components/CustomDropdown";
+import { SearchBox } from "@crm/shared/components/SearchBox";
 import AddMerchantModal from "./AddMerchantModal";
 import EditMerchantModal from "./EditMerchantModal";
 import DeleteMerchantModal from "./DeleteMerchantModal";
 import ViewMerchantModal from "./ViewMerchantModal";
-import apiAxios from "../../api/ApiAxios";
-import ApiRequest from "../../api/ApiRequest";
+import apiAxios from "@crm/shared/api/ApiAxios";
+import ApiRequest from "@crm/shared/api/ApiRequest";
 import { BsArrowRepeat, BsPlus } from "react-icons/bs";
-import { usePaginatedData } from "../../hooks/usePaginatedData";
-import { usePermission } from "../../utils/permissions";
+import { usePaginatedData } from "@crm/shared/hooks/usePaginatedData";
+import { usePermission } from "@crm/shared/utils/permissions";
 
 const Merchants = () => {
   const canCreateMerchant = usePermission(["merchant.create"]);

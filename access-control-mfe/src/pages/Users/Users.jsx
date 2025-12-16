@@ -8,19 +8,19 @@ import {
   DropdownTrigger,
   DropdownDivider,
   useDropdown,
-} from "../../components/CustomDropdown";
-import { SearchBox } from "../../components/SearchBox";
+} from "@crm/shared/components/CustomDropdown";
+import { SearchBox } from "@crm/shared/components/SearchBox";
 import AddUserModal from "./AddUserModal";
 import EditUserModal from "./EditUserModal";
 import DeleteUserModal from "./DeleteUserModal";
 import PermissionsModal from "./PermissionsModal";
 import ViewUserModal from "./ViewUserModal";
-import apiAxios from "../../api/ApiAxios";
-import ApiRequest from "../../api/ApiRequest";
+import apiAxios from "@crm/shared/api/ApiAxios";
+import ApiRequest from "@crm/shared/api/ApiRequest";
 import { BsArrowRepeat, BsPlus, BsThreeDotsVertical } from "react-icons/bs";
 import { FiEdit, FiEye, FiShield, FiTrash2 } from "react-icons/fi";
-import { usePaginatedData } from "../../hooks/usePaginatedData";
-import { usePermission } from "../../utils/permissions";
+import { usePaginatedData } from "@crm/shared/hooks/usePaginatedData";
+import { usePermission } from "@crm/shared/utils/permissions";
 
 const Users = () => {
   const canCreateUser = usePermission(["user.create"]);

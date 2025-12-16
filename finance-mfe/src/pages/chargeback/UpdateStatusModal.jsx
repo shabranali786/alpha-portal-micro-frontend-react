@@ -7,7 +7,7 @@ import {
   TransitionChild,
 } from "@headlessui/react";
 import Select from "react-select";
-import { useSelectStyles } from "../../hooks/useSelectStyles";
+import { useSelectStyles } from "@crm/shared/hooks/useSelectStyles";
 import toast from "react-hot-toast";
 
 const statusOptions = [

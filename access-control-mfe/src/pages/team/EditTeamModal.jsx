@@ -8,10 +8,10 @@ import {
 } from "@headlessui/react";
 import Select from "react-select";
 
-import { useSelectStyles } from "../../hooks/useSelectStyles";
-import { FiltersComponent } from "../../components/AllComponents";
-import apiAxios from "../../api/ApiAxios";
-import ApiRequest from "../../api/ApiRequest";
+import { useSelectStyles } from "@crm/shared/hooks/useSelectStyles";
+import { FiltersComponent } from "@crm/shared/components/AllComponents";
+import apiAxios from "@crm/shared/api/ApiAxios";
+import ApiRequest from "@crm/shared/api/ApiRequest";
 
 export default function EditTeamModal({
   open,

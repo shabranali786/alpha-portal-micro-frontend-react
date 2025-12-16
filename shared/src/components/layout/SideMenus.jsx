@@ -19,7 +19,7 @@ import { NavLink, useLocation, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../store/authSlice";
 import { useNavigate } from "react-router-dom";
-import { checkPermission } from "../../utils/permissions";
+import { checkPermission } from "@crm/shared/utils/permissions";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 
 const allMenuItems = [
