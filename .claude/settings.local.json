@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat:*)",
+      "Bash(mv:*)",
+      "Bash(ls:*)",
+      "Bash(npm run dev:all:*)",
+      "Bash(taskkill:*)",
+      "Bash(npm run kill:ports:*)",
+      "Bash(powershell -Command \"Get-Process node -ErrorAction SilentlyContinue | Stop-Process -Force\")",
+      "Bash(cp:*)",
+      "Bash(test:*)",
+      "Bash(test -f:*)"
+    ]
+  }
+}

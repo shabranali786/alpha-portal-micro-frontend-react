@@ -4,16 +4,23 @@
   "version": "0.0.0",
   "type": "module",
   "workspaces": [
-    "dashboard",
-    "sales-report",
-    "shell"
+    "shell",
+    "shared",
+    "sales-mfe",
+    "finance-mfe",
+    "reports-mfe",
+    "access-control-mfe",
+    "brands-mfe",
+    "documents-mfe",
+    "config-mfe"
   ],
   "scripts": {
-    "dev:all": "concurrently \"npm run dev --workspace=shell\" \"npm run dev --workspace=dashboard\" \"npm run dev --workspace=sales-report\" \"npm:tailwind\"",
+    "dev:all": "concurrently \"npm run dev --workspace=shell\" \"npm run dev:remote --workspace=sales-mfe\" \"npm run dev:remote --workspace=finance-mfe\" \"npm run dev:remote --workspace=reports-mfe\" \"npm run dev:remote --workspace=access-control-mfe\" \"npm run dev:remote --workspace=brands-mfe\" \"npm run dev:remote --workspace=documents-mfe\" \"npm run dev:remote --workspace=config-mfe\" \"npm:tailwind\"",
     "install:all": "npm install",
     "build:all": "npm run build --workspaces --if-present",
+    "build:remotes": "npm run build --workspace=sales-mfe && npm run build --workspace=finance-mfe && npm run build --workspace=reports-mfe && npm run build --workspace=access-control-mfe && npm run build --workspace=brands-mfe && npm run build --workspace=documents-mfe && npm run build --workspace=config-mfe",
     "kill:ports": "taskkill /f /im node.exe /t || true",
-    "tailwind": "npx @tailwindcss/cli -i ./shell/src/tailwind.css -o ./shell/src/main.css --watch",
+    "tailwind": "npx @tailwindcss/cli -i ./shared/src/styles/tailwind.css -o ./shared/src/styles/main.css --watch",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
