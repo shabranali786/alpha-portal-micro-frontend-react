@@ -1,5 +1,5 @@
 import { lazy } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 // Lazy load pages
 const Unit = lazy(() => import("./pages/unit/Unit"));
@@ -9,13 +9,16 @@ const Merchants = lazy(() => import("./pages/merchants/Merchants"));
 const MerchantMapping = lazy(() => import("./pages/merchants/MerchantMapping"));
 
 function BrandsApp() {
+  const location = useLocation();
+  const basePath = location.pathname.split('/')[1];
+
   return (
     <Routes>
-      <Route path="/units" element={<Unit />} />
-      <Route path="/brands" element={<Brands />} />
-      <Route path="/chats" element={<Chat />} />
-      <Route path="/merchants" element={<Merchants />} />
-      <Route path="/merchant-mapping" element={<MerchantMapping />} />
+      {basePath === 'units' && <Route path="/" element={<Unit />} />}
+      {basePath === 'brands' && <Route path="/" element={<Brands />} />}
+      {basePath === 'chats' && <Route path="/" element={<Chat />} />}
+      {basePath === 'merchants' && <Route path="/" element={<Merchants />} />}
+      {basePath === 'merchant-mapping' && <Route path="/" element={<MerchantMapping />} />}
     </Routes>
   );
 }

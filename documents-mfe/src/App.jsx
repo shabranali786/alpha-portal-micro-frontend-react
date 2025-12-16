@@ -10,10 +10,10 @@ const ViewOfficeLetter = lazy(() => import("./pages/office-letters/ViewOfficeLet
 function DocumentsApp() {
   return (
     <Routes>
-      <Route path="/office-letters" element={<OfficeLetters />} />
-      <Route path="/office-letters/create" element={<AddOfficeLetter />} />
-      <Route path="/office-letters/:id/edit" element={<EditOfficeLetter />} />
-      <Route path="/office-letters/:id/view" element={<ViewOfficeLetter />} />
+      <Route path="/" element={<OfficeLetters />} />
+      <Route path="create" element={<AddOfficeLetter />} />
+      <Route path=":id/edit" element={<EditOfficeLetter />} />
+      <Route path=":id/view" element={<ViewOfficeLetter />} />
     </Routes>
   );
 }

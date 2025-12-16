@@ -16,11 +16,18 @@
     "react-router-dom": "^7.8.2",
     "@reduxjs/toolkit": "^2.9.0",
     "react-redux": "^9.2.0",
+    "axios": "^1.11.0",
+    "react-hot-toast": "^2.6.0",
+    "socket.io-client": "^4.8.1",
+    "react-icons": "^5.5.0",
+    "@headlessui/react": "^2.2.7",
+    "react-select": "^5.10.2",
+    "date-fns": "^4.1.0",
     "@crm/shared": "*"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.4",
     "vite": "^7.1.2",
-    "@originjs/vite-plugin-federation": "^1.4.1"
+    "@module-federation/vite": "^1.9.4"
   }
 }

@@ -1,5 +1,5 @@
 import { lazy } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 // Lazy load pages
 const UnitReport = lazy(() => import("./pages/reports/UnitReport"));
@@ -10,14 +10,17 @@ const UnitWiseReport = lazy(() => import("./pages/reports/UnitWiseReport"));
 const CombinedSalesReport = lazy(() => import("./pages/reports/CombinedSalesReport"));
 
 function ReportsApp() {
+  const location = useLocation();
+  const basePath = location.pathname.split('/')[1];
+
   return (
     <Routes>
-      <Route path="/unit-reports" element={<UnitReport />} />
-      <Route path="/sales-reports" element={<SalesReport />} />
-      <Route path="/merchant-reports" element={<MerchantReport />} />
-      <Route path="/team-reports" element={<TeamWiseReport />} />
-      <Route path="/unit-wise-reports" element={<UnitWiseReport />} />
-      <Route path="/combined-sales-reports" element={<CombinedSalesReport />} />
+      {basePath === 'unit-reports' && <Route path="/" element={<UnitReport />} />}
+      {basePath === 'sales-reports' && <Route path="/" element={<SalesReport />} />}
+      {basePath === 'merchant-reports' && <Route path="/" element={<MerchantReport />} />}
+      {basePath === 'team-reports' && <Route path="/" element={<TeamWiseReport />} />}
+      {basePath === 'unit-wise-reports' && <Route path="/" element={<UnitWiseReport />} />}
+      {basePath === 'combined-sales-reports' && <Route path="/" element={<CombinedSalesReport />} />}
     </Routes>
   );
 }

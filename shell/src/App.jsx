@@ -63,9 +63,25 @@ function App() {
           <Route index element={<Dashboard />} />
           <Route path="profile" element={<Profile />} />
 
-          {/* Sales MFE routes */}
+          {/* Sales MFE - handles leads, customer, invoices */}
           <Route
-            path="/*"
+            path="leads/*"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <SalesApp />
+              </Suspense>
+            }
+          />
+          <Route
+            path="customer/*"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <SalesApp />
+              </Suspense>
+            }
+          />
+          <Route
+            path="invoices/*"
             element={
               <Suspense fallback={<PageLoader />}>
                 <SalesApp />
@@ -73,9 +89,33 @@ function App() {
             }
           />
 
-          {/* Finance MFE routes */}
+          {/* Finance MFE */}
           <Route
-            path="/*"
+            path="transactions/*"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <FinanceApp />
+              </Suspense>
+            }
+          />
+          <Route
+            path="chargebacks/*"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <FinanceApp />
+              </Suspense>
+            }
+          />
+          <Route
+            path="external-payments/*"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <FinanceApp />
+              </Suspense>
+            }
+          />
+          <Route
+            path="expenses/*"
             element={
               <Suspense fallback={<PageLoader />}>
                 <FinanceApp />
@@ -83,9 +123,49 @@ function App() {
             }
           />
 
-          {/* Reports MFE routes */}
+          {/* Reports MFE */}
           <Route
-            path="/*"
+            path="unit-reports/*"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <ReportsApp />
+              </Suspense>
+            }
+          />
+          <Route
+            path="sales-reports/*"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <ReportsApp />
+              </Suspense>
+            }
+          />
+          <Route
+            path="merchant-reports/*"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <ReportsApp />
+              </Suspense>
+            }
+          />
+          <Route
+            path="team-reports/*"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <ReportsApp />
+              </Suspense>
+            }
+          />
+          <Route
+            path="unit-wise-reports/*"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <ReportsApp />
+              </Suspense>
+            }
+          />
+          <Route
+            path="combined-sales-reports/*"
             element={
               <Suspense fallback={<PageLoader />}>
                 <ReportsApp />
@@ -93,9 +173,41 @@ function App() {
             }
           />
 
-          {/* Access Control MFE routes */}
+          {/* Access Control MFE */}
           <Route
-            path="/*"
+            path="users/*"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <AccessControlApp />
+              </Suspense>
+            }
+          />
+          <Route
+            path="teams/*"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <AccessControlApp />
+              </Suspense>
+            }
+          />
+          <Route
+            path="roles/*"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <AccessControlApp />
+              </Suspense>
+            }
+          />
+          <Route
+            path="permissions/*"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <AccessControlApp />
+              </Suspense>
+            }
+          />
+          <Route
+            path="ip/*"
             element={
               <Suspense fallback={<PageLoader />}>
                 <AccessControlApp />
@@ -103,9 +215,41 @@ function App() {
             }
           />
 
-          {/* Brands MFE routes */}
+          {/* Brands MFE */}
           <Route
-            path="/*"
+            path="units/*"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <BrandsApp />
+              </Suspense>
+            }
+          />
+          <Route
+            path="brands/*"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <BrandsApp />
+              </Suspense>
+            }
+          />
+          <Route
+            path="chats/*"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <BrandsApp />
+              </Suspense>
+            }
+          />
+          <Route
+            path="merchants/*"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <BrandsApp />
+              </Suspense>
+            }
+          />
+          <Route
+            path="merchant-mapping/*"
             element={
               <Suspense fallback={<PageLoader />}>
                 <BrandsApp />
@@ -113,9 +257,9 @@ function App() {
             }
           />
 
-          {/* Documents MFE routes */}
+          {/* Documents MFE */}
           <Route
-            path="/*"
+            path="office-letters/*"
             element={
               <Suspense fallback={<PageLoader />}>
                 <DocumentsApp />
@@ -123,9 +267,17 @@ function App() {
             }
           />
 
-          {/* Config MFE routes */}
+          {/* Config MFE */}
           <Route
-            path="/*"
+            path="package-mapping/*"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <ConfigApp />
+              </Suspense>
+            }
+          />
+          <Route
+            path="email-configs/*"
             element={
               <Suspense fallback={<PageLoader />}>
                 <ConfigApp />

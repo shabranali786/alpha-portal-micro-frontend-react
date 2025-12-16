@@ -1,5 +1,5 @@
 import { lazy } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 // Lazy load pages
 const Transaction = lazy(() => import("./pages/transaction/Transaction"));
@@ -12,16 +12,38 @@ const ViewExternalPaymentPage = lazy(() => import("./pages/external-payments/Vie
 const Expenses = lazy(() => import("./pages/expenses/Expenses"));
 
 function FinanceApp() {
+  const location = useLocation();
+  const basePath = location.pathname.split('/')[1];
+
   return (
     <Routes>
-      <Route path="/transactions" element={<Transaction />} />
-      <Route path="/transactions/:id" element={<TransactionDetails />} />
-      <Route path="/chargebacks" element={<Chargebacks />} />
-      <Route path="/external-payments" element={<ExternalPayments />} />
-      <Route path="/external-payments/create" element={<AddExternalPaymentPage />} />
-      <Route path="/external-payments/:id/edit" element={<EditExternalPaymentPage />} />
-      <Route path="/external-payments/:id" element={<ViewExternalPaymentPage />} />
-      <Route path="/expenses" element={<Expenses />} />
+      {/* Transactions routes */}
+      {basePath === 'transactions' && (
+        <>
+          <Route path="/" element={<Transaction />} />
+          <Route path=":id" element={<TransactionDetails />} />
+        </>
+      )}
+
+      {/* Chargebacks routes */}
+      {basePath === 'chargebacks' && (
+        <Route path="/" element={<Chargebacks />} />
+      )}
+
+      {/* External Payments routes */}
+      {basePath === 'external-payments' && (
+        <>
+          <Route path="/" element={<ExternalPayments />} />
+          <Route path="create" element={<AddExternalPaymentPage />} />
+          <Route path=":id/edit" element={<EditExternalPaymentPage />} />
+          <Route path=":id" element={<ViewExternalPaymentPage />} />
+        </>
+      )}
+
+      {/* Expenses routes */}
+      {basePath === 'expenses' && (
+        <Route path="/" element={<Expenses />} />
+      )}
     </Routes>
   );
 }

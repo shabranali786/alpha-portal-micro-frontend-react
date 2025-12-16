@@ -10,7 +10,9 @@
       "Bash(powershell -Command \"Get-Process node -ErrorAction SilentlyContinue | Stop-Process -Force\")",
       "Bash(cp:*)",
       "Bash(test:*)",
-      "Bash(test -f:*)"
+      "Bash(test -f:*)",
+      "Bash(npm run build:remotes:*)",
+      "Bash(npm install)"
     ]
   }
 }
